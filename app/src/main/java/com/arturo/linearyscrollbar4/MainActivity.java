@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.arturo.linearyscrollbar4.R;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     private FloatingActionButton mAddReminderButton;
     private Toolbar mToolbar;
+    private Button button;
+
     AlarmCursorAdapter mCursorAdapter;
     AlarmReminderDbHelper alarmReminderDbHelper = new AlarmReminderDbHelper(this);
     ListView reminderListView;
@@ -35,6 +38,16 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        button = (Button)findViewById(R.id.irinicio);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               final Intent intent = new Intent(MainActivity.this, Inicio.class);
+
+                startActivity(intent);
+            }
+        });
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -61,8 +74,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 startActivity(intent);
 
+
+
+
             }
         });
+
+
 
 
         mAddReminderButton = (FloatingActionButton) findViewById(R.id.fab);
@@ -113,5 +131,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoaderReset(Loader<Cursor> loader) {
         mCursorAdapter.swapCursor(null);
 
+    }
+
+    public void visitar(View view) {
+        Intent intent = new Intent(this, Inicio.class);
+
+        startActivity(intent);
     }
 }

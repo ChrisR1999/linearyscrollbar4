@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.delaroystudios.alarmreminder.MainActivity">
 
+    <Button
+        android:id="@+id/irinicio"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fab"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Button" />
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_height="wrap_content"
@@ -44,11 +56,16 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="13dp"
         android:src="@drawable/ic_add"
         app:backgroundTint="@color/colorPrimary"
-        app:fabSize="normal"/>
+        app:fabSize="normal" />
 
 </RelativeLayout>

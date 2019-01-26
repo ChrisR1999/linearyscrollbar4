@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arturo.linearyscrollbar4">
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -20,25 +20,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddReminderActivity"
+        <activity
+            android:name=".AddReminderActivity"
             android:label="@string/title_activity_add_reminder"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
-                />
+                android:value=".MainActivity" />
         </activity>
+
         <provider
             android:name=".data.AlarmReminderProvider"
-            android:authorities="com.delaroystudios.alarmreminder"
+            android:authorities="com.arturo.linearyscrollbar4 "
             android:exported="false" />
 
         <service
             android:name=".reminder.ReminderAlarmService"
             android:exported="false" />
 
+        <activity android:name=".Inicio"></activity>
     </application>
 
 </manifest>

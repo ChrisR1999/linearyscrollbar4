@@ -12,7 +12,7 @@ public class AlarmReminderContract {
 
     private AlarmReminderContract() {}
 
-    public static final String CONTENT_AUTHORITY = "com.delaroystudios.alarmreminder";
+    public static final String CONTENT_AUTHORITY = "com.arturo.linearyscrollbar4";
 
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
