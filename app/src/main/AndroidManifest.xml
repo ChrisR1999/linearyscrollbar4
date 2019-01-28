@@ -34,7 +34,7 @@
 
         <provider
             android:name=".data.AlarmReminderProvider"
-            android:authorities="com.arturo.linearyscrollbar4 "
+            android:authorities="com.arturo.linearyscrollbar4"
             android:exported="false" />
 
         <service
