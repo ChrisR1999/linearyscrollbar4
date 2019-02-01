@@ -39,7 +39,6 @@ public class Inicio extends AppCompatActivity {
         Informacion.dia = 0;
         Informacion.fechaanterior = ("" + DateFormat.format("dd/MM/yyyy ", d.getTime()));
 
-
         Intent intent = new Intent(this, Menu.class);
 
         startActivity(intent);

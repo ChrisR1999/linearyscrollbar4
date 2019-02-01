@@ -37,6 +37,7 @@ public class ControladorRutas extends VinculoBD {
                 modelo.setRespuestaes(cursor.getString(2));
                 modelo.setRespuesta2es(cursor.getString(3));
                 modelo.setRespuesta3es(cursor.getString(4));
+                cursor.moveToNext();
             }
             cursor.close();
             close();
@@ -90,6 +91,7 @@ public class ControladorRutas extends VinculoBD {
             while (!cursor.isAfterLast()) {
                 modelo.setIdRespuesta(cursor.getInt(0));
                 modelo.setRespuestaWaifu(cursor.getString(1));
+                cursor.moveToNext();
             }
             cursor.close();
             close();
