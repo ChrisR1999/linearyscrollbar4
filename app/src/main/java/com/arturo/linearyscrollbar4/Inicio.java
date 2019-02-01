@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,13 +15,17 @@ import android.widget.Toast;
 import com.arturo.linearyscrollbar4.data.AlarmReminderContract;
 import com.arturo.linearyscrollbar4.reminder.AlarmScheduler;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Inicio extends AppCompatActivity {
 
     public EditText nombre;
     Informacion informacin = new Informacion();
     Context context = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,17 +34,20 @@ public class Inicio extends AppCompatActivity {
     }
 
 
-
     public void guardarinformacion(View view) {
-        SharedPreferences shard = getSharedPreferences("Preferencias",context.MODE_PRIVATE);
+        SharedPreferences shard = getSharedPreferences("Preferencias", context.MODE_PRIVATE);
         SharedPreferences.Editor editor = shard.edit();
-        editor.putString("MiNombre",nombre.getText().toString());
+        editor.putString("MiNombre", nombre.getText().toString());
         editor.putInt("MiRuta", 1);
         editor.putInt("MiDia", 0);
+        Date d = new Date();
+        editor.putString("fechaanterior", ""+ DateFormat.format("dd/MM/yyyy ", d.getTime()));
         editor.commit();
         informacin.setNombreUsuario(nombre.getText().toString());
         informacin.setRuta(1);
         informacin.setDia(0);
+        informacin.setFechaanterior(""+ DateFormat.format("dd/MM/yyyy ", d.getTime()));
+
 
         Intent intent = new Intent(this, Menu.class);
 
