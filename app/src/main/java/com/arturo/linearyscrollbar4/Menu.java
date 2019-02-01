@@ -1,7 +1,9 @@
 package com.arturo.linearyscrollbar4;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.arturo.linearyscrollbar4.R;
 
@@ -12,5 +14,12 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+    }
+
+
+    public void visitar(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+
+        startActivity(intent);
     }
 }

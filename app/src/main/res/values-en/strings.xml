@@ -44,4 +44,5 @@
     <string name="reminder_title">AlarmReminder</string>
 
     <string name="JUGAR">PLAY</string>
+    <string name="alarmas">ALARMS</string>
 </resources>
