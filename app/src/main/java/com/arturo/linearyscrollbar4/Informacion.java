@@ -2,13 +2,13 @@ package com.arturo.linearyscrollbar4;
 
 class Informacion {
 
-    private  String NombreUsuario;
-    private int ruta;
-    private int dia;
-    private String fechaanterior;
-    private String fechahoy;
+    static int dia;
+    static int ruta;
+    static String NombreUsuario;
+    static String fechaanterior;
+    static String fechahoy;
 
-    public String getFechaanterior() {
+   /*public String getFechaanterior() {
         return fechaanterior;
     }
 
@@ -59,6 +59,6 @@ class Informacion {
         this.dia = dia;
         this.fechaanterior = fechaanterior;
         this.fechahoy = fechahoy;
-    }
+    }*/
 
 }
