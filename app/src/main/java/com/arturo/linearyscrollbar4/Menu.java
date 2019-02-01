@@ -19,7 +19,6 @@ public class Menu extends AppCompatActivity {
 
     public void visitar(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-
         startActivity(intent);
     }
 }

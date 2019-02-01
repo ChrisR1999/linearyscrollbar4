@@ -2,41 +2,39 @@ package com.arturo.linearyscrollbar4;
 
 class Informacion {
 
-    private  String NombreUsuario;
-    private int ruta;
-    private int dia;
+    static String nombreUsuario;
+    static int ruta;
+    static int dia;
 
-    public String getNombreUsuario() {
-        return NombreUsuario;
+    /*public static String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
+    public static void setNombreUsuario(String nombreUsuario) {
         NombreUsuario = nombreUsuario;
     }
 
-    public int getRuta() {
+    public static int getRuta() {
         return ruta;
     }
 
-    public void setRuta(int ruta) {
+    public static void setRuta(int ruta) {
         this.ruta = ruta;
     }
 
-    public int getDia() {
+    public static int getDia() {
         return dia;
     }
 
-    public void setDia(int dia) {
+    public static void setDia(int dia) {
         this.dia = dia;
-    }
+    }*/
 
 
-
-
-    public void setNombreUsuario(String nombreUsuario, int ruta, int dia) {
+    /*public void setNombreUsuario(String nombreUsuario, int ruta, int dia) {
         NombreUsuario = nombreUsuario;
-        this.ruta = ruta;
+        ruta = ruta;
         this.dia = dia;
-    }
+    }*/
 
 }

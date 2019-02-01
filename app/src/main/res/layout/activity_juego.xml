@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityJuego">
+
+    <TextView
+        android:id="@+id/txtDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:text="Dia: 1" />
+
+    <TextView
+        android:id="@+id/txtRuta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:text="Ruta: 2" />
+
+    <TextView
+        android:id="@+id/txtFrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="TEXTO PRUEBA FRASE" />
+
+    <TextView
+        android:id="@+id/txtPregunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtFrase"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="TEXTO PRUEBA PREGUNTA" />
+
+    <LinearLayout
+        android:id="@+id/linearBotones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_bright"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,6 +1,6 @@
 package com.arturo.linearyscrollbar4.Modelos;
 
-public class modeloRutas {
+public class ModeloRutas {
 
     private String frasees;
     private String preguntases;
@@ -9,6 +9,22 @@ public class modeloRutas {
     private String respuesta3es;
     private int ruta;
     private int dia;
+
+    public ModeloRutas() {
+    }
+
+    public ModeloRutas(String frasees, String preguntases,
+                       String respuestaes, String respuesta2es,
+                       String respuesta3es, int ruta, int dia) {
+
+        this.frasees = frasees;
+        this.preguntases = preguntases;
+        this.respuestaes = respuestaes;
+        this.respuesta2es = respuesta2es;
+        this.respuesta3es = respuesta3es;
+        this.ruta = ruta;
+        this.dia = dia;
+    }
 
     public String getFrasees() {
         return frasees;
@@ -63,22 +79,6 @@ public class modeloRutas {
     }
 
     public void setDia(int dia) {
-        this.dia = dia;
-    }
-
-
-    public modeloRutas(){
-
-    }
-
-    public modeloRutas(String frasees, String preguntases,String respuestaes, String respuesta2es, String respuesta3es, int ruta, int dia){
-
-       this.frasees = frasees;
-       this.preguntases = preguntases;
-       this.respuestaes = respuestaes;
-        this.respuesta2es = respuesta2es;
-        this.respuesta3es = respuesta3es;
-        this.ruta =ruta;
         this.dia = dia;
     }
 }
