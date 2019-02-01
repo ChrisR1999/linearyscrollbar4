@@ -2,6 +2,7 @@ package com.arturo.linearyscrollbar4;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -30,12 +31,19 @@ public class Inicio extends AppCompatActivity {
 
 
     public void guardarinformacion(View view) {
-
         SharedPreferences shard = getSharedPreferences("Preferencias",context.MODE_PRIVATE);
         SharedPreferences.Editor editor = shard.edit();
         editor.putString("MiNombre",nombre.getText().toString());
+        editor.putInt("MiRuta", 1);
+        editor.putInt("MiDia", 0);
         editor.commit();
         informacin.setNombreUsuario(nombre.getText().toString());
+        informacin.setRuta(1);
+        informacin.setDia(0);
+
+        Intent intent = new Intent(this, Menu.class);
+
+        startActivity(intent);
     }
 
   /*  public void saveReminder(){
