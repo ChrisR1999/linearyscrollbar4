@@ -37,7 +37,7 @@ public class Inicio extends AppCompatActivity {
         Informacion.NombreUsuario = nombre.getText().toString();
         Informacion.ruta = 1;
         Informacion.dia = 0;
-        Informacion.fechaanterior = ("" + DateFormat.format("dd/MM/yyyy ", d.getTime()));
+        Informacion.fechaanterior = "30/01/2019";//("" + DateFormat.format("dd/MM/yyyy ", d.getTime()));
 
         Intent intent = new Intent(this, Menu.class);
 
