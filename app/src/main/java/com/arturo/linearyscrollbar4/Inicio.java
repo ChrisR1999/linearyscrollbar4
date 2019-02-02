@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -29,15 +30,19 @@ public class Inicio extends AppCompatActivity {
         SharedPreferences shard = getSharedPreferences("Preferencias", context.MODE_PRIVATE);
         SharedPreferences.Editor editor = shard.edit();
         editor.putString("MiNombre", nombre.getText().toString());
-        editor.putInt("MiRuta", 1);
-        editor.putInt("MiDia", 0);
+        editor.putString("MiRuta", "1");
+        editor.putString("MiDia", "0");
         Date d = new Date();
         editor.putString("fechaanterior", "" + DateFormat.format("dd/MM/yyyy ", d.getTime()));
         editor.apply();
         Informacion.NombreUsuario = nombre.getText().toString();
         Informacion.ruta = 1;
         Informacion.dia = 0;
-        Informacion.fechaanterior = "30/01/2019";//("" + DateFormat.format("dd/MM/yyyy ", d.getTime()));
+        Informacion.fechaanterior = ("" + DateFormat.format("dd/MM/yyyy ", d.getTime()));
+
+
+
+
 
         Intent intent = new Intent(this, Menu.class);
 

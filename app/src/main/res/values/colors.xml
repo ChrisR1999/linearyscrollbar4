@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="fab_pressed">#546e7a</color>
+    <color name="amarillo">#CBBB3C</color>
+    <color name="rojo">#F44336</color>
+    <color name="verde">#4CAF50</color>
 </resources>
