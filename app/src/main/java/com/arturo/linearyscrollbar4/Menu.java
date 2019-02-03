@@ -93,8 +93,17 @@ public class Menu extends AppCompatActivity {
         z=z+2;
         String zs = String.valueOf(z);
         editor.remove("MiDia");
-        editor.putString("MiDia",zs);
         SharedPreferences shard2 = getSharedPreferences("Preferencias",context.MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = shard2.edit();
+        editor2.putString("MiDia",zs);
+
+     /*   Toast toast1 =
+                Toast.makeText(getApplicationContext(),
+                        ""+zs, Toast.LENGTH_SHORT);
+
+        toast1.show();*/
+
+
         Informacion.dia = Integer.parseInt(shard2.getString("MiDia","Master"));
         boton.setBackgroundColor(getResources().getColor(R.color.verde));
     }
