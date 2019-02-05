@@ -12,6 +12,8 @@ import com.arturo.linearyscrollbar4.Modelos.ModeloRespuestas;
 import com.arturo.linearyscrollbar4.Modelos.ModeloRutas;
 
 public class ActivityJuego extends AppCompatActivity {
+    private TextView txtDia;
+    private TextView txtRuta;
     private TextView txtFrase;
     private TextView txtPregunta;
     private LinearLayout linearBotones;
@@ -29,6 +31,8 @@ public class ActivityJuego extends AppCompatActivity {
     }
 
     private void initComponents() {
+        txtDia = (TextView) findViewById(R.id.txtDia);
+        txtRuta = (TextView) findViewById(R.id.txtRuta);
         txtFrase = (TextView) findViewById(R.id.txtFrase);
         txtPregunta = (TextView) findViewById(R.id.txtPregunta);
         linearBotones = (LinearLayout) findViewById(R.id.linearBotones);
@@ -38,6 +42,8 @@ public class ActivityJuego extends AppCompatActivity {
                         Informacion.dia,
                         Informacion.ruta
                 );
+        txtDia.setText("Dia: " + String.valueOf(Informacion.dia));
+        txtRuta.setText("Ruta: " + String.valueOf(Informacion.ruta));
     }
 
     private void colocarTexto(int opc) {
@@ -80,7 +86,7 @@ public class ActivityJuego extends AppCompatActivity {
         }
         if (modelo.getRespuesta2es() != null) {
             final Button respuestaDos = new Button(this);
-            respuestaDos.setText(modelo.getRespuestaes());
+            respuestaDos.setText(modelo.getRespuesta2es());
             respuestaDos.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -99,7 +105,7 @@ public class ActivityJuego extends AppCompatActivity {
         }
         if (modelo.getRespuesta3es() != null) {
             final Button respuestaTres = new Button(this);
-            respuestaTres.setText(modelo.getRespuestaes());
+            respuestaTres.setText(modelo.getRespuesta3es());
             respuestaTres.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
