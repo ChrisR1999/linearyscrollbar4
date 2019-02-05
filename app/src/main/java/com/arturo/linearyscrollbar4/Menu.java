@@ -3,14 +3,11 @@ package com.arturo.linearyscrollbar4;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
-
-import com.arturo.linearyscrollbar4.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,13 +18,14 @@ import java.util.Date;
 public class Menu extends AppCompatActivity {
 
     Context context = this;
-    Button boton ;
+    Button boton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        boton =(Button) findViewById(R.id.btnjugar);
-      log();
+        boton = (Button) findViewById(R.id.btnjugar);
+        log();
     }
 
 
@@ -42,15 +40,15 @@ public class Menu extends AppCompatActivity {
     }
 
 
-    public void log (){
+    public void log() {
 
-        SharedPreferences shard = getSharedPreferences("Preferencias",context.MODE_PRIVATE);
+        SharedPreferences shard = getSharedPreferences("Preferencias", context.MODE_PRIVATE);
         SharedPreferences.Editor editor = shard.edit();
         Date d = new Date();
-        String fechaanterior = shard.getString("fechaanterior","Master");
-        String fechahoy =  DateFormat.format("dd/MM/yyyy ", d.getTime()).toString();
-        Informacion.ruta = Integer.parseInt(shard.getString("MiRuta","Master"));
-        Informacion.dia = Integer.parseInt(shard.getString("MiDia","Master"));
+        String fechaanterior = shard.getString("fechaanterior", "Master");
+        String fechahoy = DateFormat.format("dd/MM/yyyy ", d.getTime()).toString();
+        Informacion.ruta = Integer.parseInt(shard.getString("MiRuta", "Master"));
+        Informacion.dia = Integer.parseInt(shard.getString("MiDia", "Master"));
 
         Date fechaant = Calendar.getInstance().getTime();
         Date Fecha = Calendar.getInstance().getTime();
@@ -64,20 +62,18 @@ public class Menu extends AppCompatActivity {
         long diff = fechaant.getTime() - Fecha.getTime();
         long days = (diff / (1000 * 60 * 60 * 24)) % 365;
 
-        if(days == 0){
+        if (days == 0) {
 
             boton.setBackgroundColor(getResources().getColor(R.color.amarillo));
 
-        }
-        else{
-            if(days == -1){
+        } else {
+            if (days == -1) {
 
                 boton.setBackgroundColor(getResources().getColor(R.color.verde));
-                int z=Integer.parseInt(shard.getString("MiDia","Master"));
+                int z = Integer.parseInt(shard.getString("MiDia", "Master"));
                 z++;
-                editor.putString("MiDia", z+"");
-            }
-            else if(days < -1){
+                editor.putString("MiDia", z + "");
+            } else if (days < -1) {
                 boton.setBackgroundColor(getResources().getColor(R.color.rojo));
                 editor.putString("MiRuta", "2");
                 editor.putString("MiDia", "1");
@@ -86,16 +82,21 @@ public class Menu extends AppCompatActivity {
         }
     }
 
-    public void DiaExtra(View view){
-        SharedPreferences shard = getSharedPreferences("Preferencias",context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = shard.edit();
-        int z=Integer.parseInt(shard.getString("MiDia","Master"));
-        z=z+2;
-        String zs = String.valueOf(z);
-        editor.remove("MiDia");
-        SharedPreferences shard2 = getSharedPreferences("Preferencias",context.MODE_PRIVATE);
-        SharedPreferences.Editor editor2 = shard2.edit();
-        editor2.putString("MiDia",zs);
+    public void DiaExtra(View view) {
+        int diaExtra;
+        SharedPreferences shard;
+        shard = getSharedPreferences("Preferencias", context.MODE_PRIVATE);
+        SharedPreferences.Editor editor;
+        diaExtra = Integer.parseInt(
+                shard.getString(
+                        "MiDia", "Master")
+        );
+        diaExtra = diaExtra + 2;
+        //editor.remove("MiDia");
+        editor = shard.edit();
+        editor.putString("MiDia", String.valueOf(diaExtra));
+        editor.apply();
+        shard = getSharedPreferences("Preferencias", context.MODE_PRIVATE);
 
      /*   Toast toast1 =
                 Toast.makeText(getApplicationContext(),
@@ -103,8 +104,7 @@ public class Menu extends AppCompatActivity {
 
         toast1.show();*/
 
-
-        Informacion.dia = Integer.parseInt(shard2.getString("MiDia","Master"));
+        Informacion.dia = Integer.parseInt(shard.getString("MiDia", "Master"));
         boton.setBackgroundColor(getResources().getColor(R.color.verde));
     }
 }
